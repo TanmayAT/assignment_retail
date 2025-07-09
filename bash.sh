@@ -35,8 +35,8 @@ echo "🔁 Restarting Docker service..."
 sudo systemctl restart docker
 
 # Step 6: Clone or update the repo
-REPO_DIR="Assignment_Cyfuture"
-REPO_URL="git@github.com:TanmayAT/Assignment_Cyfuture.git"
+REPO_DIR="assignment_retail"
+REPO_URL="git@github.com:TanmayAT/assignment_retail.git"
 
 if [ ! -d "$REPO_DIR" ]; then
   echo "📥 Cloning the repository via SSH..."
