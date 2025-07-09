@@ -1,0 +1,31 @@
+2025-07-09 10:39:46,697 - INFO - Request: POST http://localhost:8002/predict
+2025-07-09 10:39:46,700 - INFO - Response status: 307
+2025-07-09 10:39:54,835 - INFO - Request: POST http://localhost:8002/predict/
+2025-07-09 10:39:54,836 - INFO - Response status: 500
+2025-07-09 10:40:37,922 - INFO - Request: POST http://localhost:8002/predict
+2025-07-09 10:40:37,946 - INFO - Response status: 307
+2025-07-09 10:40:46,236 - INFO - Request: POST http://localhost:8002/predict/
+2025-07-09 10:40:46,237 - INFO - Response status: 500
+2025-07-09 10:45:03,811 - INFO - Connecting to Redis at redis-service:6379
+2025-07-09 10:45:10,978 - INFO - Connecting to Redis at redis-service:6379
+2025-07-09 10:45:13,143 - INFO - Connecting to Redis at redis-service:6379
+2025-07-09 10:45:14,847 - INFO - Starting Retail Model API
+2025-07-09 10:45:14,848 - INFO - Connecting to Redis at redis-service:6379
+2025-07-09 12:47:18,895 - INFO - Starting Retail Model API
+2025-07-09 12:47:18,899 - INFO - Connecting to Redis at redis-service:6379
+2025-07-09 12:47:39,800 - INFO - Request: POST http://localhost:8002/predict
+2025-07-09 12:47:39,806 - INFO - Response status: 307
+2025-07-09 12:47:40,299 - INFO - Request: POST http://localhost:8002/predict/
+2025-07-09 12:47:40,300 - INFO - Response status: 200
+2025-07-09 12:48:19,138 - INFO - Request: POST http://localhost:8002/predict
+2025-07-09 12:48:19,144 - INFO - Response status: 307
+2025-07-09 12:48:19,382 - INFO - Request: POST http://localhost:8002/predict/
+2025-07-09 12:48:19,383 - INFO - Response status: 200
+2025-07-09 12:49:10,908 - INFO - Request: POST http://localhost:8002/predict
+2025-07-09 12:49:10,910 - INFO - Response status: 307
+2025-07-09 12:49:11,025 - INFO - Request: POST http://localhost:8002/predict/
+2025-07-09 12:49:11,028 - INFO - Response status: 200
+2025-07-09 12:49:24,716 - INFO - Request: POST http://localhost:8002/predict
+2025-07-09 12:49:24,719 - INFO - Response status: 307
+2025-07-09 12:49:24,750 - INFO - Request: POST http://localhost:8002/predict/
+2025-07-09 12:49:24,751 - INFO - Response status: 200
