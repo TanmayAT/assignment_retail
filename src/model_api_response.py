@@ -8,13 +8,15 @@ from fastapi.middleware.cors import CORSMiddleware
 import logging
 import os
 
+# Redis configuration
 redis_host = os.getenv("REDIS_HOST", "redis-service")
 redis_port = int(os.getenv("REDIS_PORT", "6379"))
-
 redis_client = redis.Redis(host=redis_host, port=redis_port, db=0)
 
+# FastAPI app
 app = FastAPI()
 
+# Logging configuration
 logging.basicConfig(
     level=logging.DEBUG,
     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -36,7 +38,7 @@ middleware = [
     )
 ]
 
-# Load models once at startup
+# Load models
 try:
     faster_pipeline = joblib.load("faster_closing_model.pkl")
     return_pipeline = joblib.load("high_return_model.pkl")
@@ -67,7 +69,7 @@ async def predict(request: Request):
         input_str = json.dumps(input_data)
         logger.debug(f"Received input data: {input_data}")
 
-        # Check cache (optional)
+        # Check cache
         cached_result = redis_client.get(input_str)
         if cached_result:
             logger.info("Returning cached result")
@@ -85,10 +87,13 @@ async def predict(request: Request):
             "high_return_score": round(float(high_return[0]), 2)
         }
 
-        # Cache result
-        redis_client.set(input_str, json.dumps(result))
-        logger.info(f"Prediction result: {result}")
+        # Cache result (handle Redis read-only replicas)
+        try:
+            redis_client.set(input_str, json.dumps(result))
+        except redis.exceptions.ReadOnlyError:
+            logger.warning("Redis is in read-only mode. Skipping cache write.")
 
+        logger.info(f"Prediction result: {result}")
         return result
 
     except Exception as e:
